@@ -1,0 +1,153 @@
+@import url(reset.css);
+@import url(vars.css);
+@font-face {
+    font-family: "myFont-regular-i";
+    src: url(../font/Poppins-Italic.ttf);
+}
+@font-face {
+    font-family: "myFont-bold";
+    src: url(../font/Poppins-Bold.ttf);
+}
+@font-face {
+    font-family: "myFont-extraBolg-i";
+    src: url(../font/Poppins-ExtraBoldItalic.ttf);
+}
+
+
+
+body{
+    background-color: var(--Off-white);
+    display: grid;
+    place-content: center;
+
+    min-height: 100vh;
+    font-family: var(--FF-B);
+
+    padding-block: 3.5rem;
+}
+
+.wrapper{
+    background-color: var(--White);
+    width: min(900px, 60vw);       
+
+    padding-inline: 1.7rem;
+    padding-block: 1.7rem;
+
+    border-radius: 1rem 1rem 7rem 1rem;
+}
+form{
+    display: flex;
+    gap: 1rem;
+}
+form>div{
+    display: flex;
+    flex-flow: column;
+    gap: .3rem;
+    width: min(160px,100%);
+
+    border-radius: .3rem;
+}
+label{
+    font-size: clamp(.2rem,4vw,.6rem);
+    color: var(--Smokey-grey);
+
+    letter-spacing: clamp(.05px,4vw,1px);
+}
+
+[type="text"]{
+    font-size: clamp(.2rem,4vw,1rem);
+    line-height: 1.5rem;
+
+    width: 100%;
+    border: 1px solid var(--Light-grey);
+    border-radius: .3rem;
+
+    color: var(--Off-black);
+
+    font-family: var(--FF-B);
+
+    padding-inline: .4rem 0;
+    padding-block: .5rem;
+}
+[type="text"]:focus{
+    outline: none;
+    border-color: var(--Purple);
+}
+
+.relative{
+    height: 2.6rem;
+    position: relative;
+}
+.btn{
+    width: 2.6rem;
+    height: 100%;
+    border-radius: 50%;
+    background-color: var(--Purple);
+    margin-inline-start: auto;
+
+    position: relative;
+
+    cursor: pointer;
+
+    background-image: url(../assets/images/icon-arrow.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px;
+
+    z-index: 3;
+
+    transition:all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.btn:hover{
+    background-color: var(--Off-black);
+}
+.bar{
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+
+    background-color: var(--Light-grey);
+    height: 1px;
+    border: none;
+
+    z-index: 0;
+}
+.outputs>p{
+    font-family: var(--FF-EBI);
+    font-size: clamp(.6rem, 7vw, 3.2rem);
+    line-height: clamp(1.3rem, 8vw, 4.2rem);
+}
+
+@media(width<850px){
+    .wrapper{
+        border-radius: .4rem .4rem 3rem .4rem;
+
+        padding-inline: .7rem;
+    }
+    form{
+        gap: 0.3rem;
+    }
+    .relative{
+        margin-block: 1rem;
+        height: 2rem;
+    }
+    .btn{
+        margin: auto;
+        width: 2rem;
+    }
+
+    [type="text"]{
+        padding-block: .1rem;
+        padding-inline-start: .18rem;
+    }
+}
+
+/* for JS */
+
+form>div>p{
+    color: red;
+    font-size: .4rem;
+    
+}
